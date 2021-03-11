@@ -5,37 +5,38 @@ using namespace std;
 
 int main() {
     int i;
-    int liczbar = 0;
-    int liczbaw = 0;
-    int licz1;
-    int licz2;
+    int numberR = 0;
+    int numberW = 0;
+    int num1;
+    int num2;
 
-    ifstream plik1;
-    plik1.open("liczby1.txt");
+    ifstream file1;
+    file1.open("liczby1.txt");
 
-    ifstream plik2;
-    plik2.open("liczby2.txt");
+    ifstream file2;
+    file2.open("liczby2.txt");
 
     for(i=0; i<1000; i++) 
     {
-        plik1 >> oct >> licz1;
-        plik2 >> dec >> licz2;
+        file1 >> oct >> num1;
+        file2 >> dec >> num2;
 
-        if (licz1 == licz2) 
+        if (num1 == num2) 
         {
-            liczbar++;
+            numberR++;
         } 
-        else if (licz1 > licz2) 
+        else if (num1 > num2) 
         {
-            liczbaw++;
+            numberW++;
         }
     }
-    plik1.close();
-    plik2.close();
+    
+    file1.close();
+    file2.close();
 
     cout << "Zadanie 3:\n";
-    cout << liczbar << " par liczb ma te sama wartosc\n";
-    cout << liczbaw << " liczb z pierwszego pliku jest wiekszych od odpowiadajacych im liczb z drugiego pliku\n\n";
+    cout << numberR << " par liczb ma te sama wartosc\n";
+    cout << numberW << " liczb z pierwszego pliku jest wiekszych od odpowiadajacych im liczb z drugiego pliku\n\n";
 
     return 0;
 }
