@@ -5,27 +5,27 @@ using namespace std;
 
 int main() {
     int i;
-    int liczba;
-    int minimum = 999999;
-    int maximum = 0;
+    int number;
+    int min = 999999;
+    int max = 0;
 
-    ifstream plik;
-    plik.open("liczby1.txt");
+    ifstream file;
+    file.open("liczby1.txt");
 
     for(i=0; i<1000; i++) {
-        plik >> oct >> liczba;
-        if (minimum > liczba) {
-            minimum = liczba;
+        plik >> oct >> number;
+        if (min > number) {
+            min = number;
         }
-        if (maximum < liczba) {
-            maximum = liczba;
+        if (max < number) {
+            max = number;
         }
     }
-    plik.close();
+    file.close();
 
     cout << "Zadanie 1:\n";
-    cout << "najmniejsza z liczb to " << dec << minimum << " dziesietnie czyli " << oct << minimum << " osemkowo\n";
-    cout << "najwieksza z liczb to " << dec << maximum << " dziesietnie czyli " << oct << maximum << " osemkowo\n\n";
+    cout << "najmniejsza z liczb to " << dec << min << " dziesietnie czyli " << oct << min << " osemkowo\n";
+    cout << "najwieksza z liczb to " << dec << max << " dziesietnie czyli " << oct << max << " osemkowo\n\n";
 
     return 0;
 }
