@@ -5,40 +5,40 @@ using namespace std;
 
 int main() {
     int i;
-    int liczba;
-    int poprzednia = -1;
-    int pierwszy = -1;
-    int dlugosc_ciagu = 0;
-    int naj_dlugosc_ciagu = 0;
-    int naj_pierwszy;
+    int number;
+    int last = -1;
+    int first = -1;
+    int stringLength = 0;
+    int mostStringLength = 0;
+    int mostFirst;
 
-    ifstream plik;
-    plik.open("liczby2.txt");
+    ifstream file;
+    file.open("liczby2.txt");
 
     for(i=0; i<1000; i++) 
     {
-        plik >> liczba;
-        if (liczba >= poprzednia) 
+        file >> number;
+        if (number >= last) 
         {
-            dlugosc_ciagu++;
+            stringLength++;
         } 
         else 
         {
-            pierwszy = liczba;
-            dlugosc_ciagu = 1;
+            first = number;
+            stringLength = 1;
         }
-        if (dlugosc_ciagu > naj_dlugosc_ciagu) 
+        if (stringLength > mostStringLength) 
         {
-            naj_dlugosc_ciagu = dlugosc_ciagu;
-            naj_pierwszy = pierwszy;
+            mostStringLength = stringLength;
+            mostFirst = first;
         }
 
-        poprzednia = liczba;
+        last = number;
     }
-    plik.close();
+    file.close();
 
     cout << "Zadanie 2:\n";
-    cout << "najdluzszy ciag zaczyna sie od elementu " << naj_pierwszy << " i ma " << naj_dlugosc_ciagu << " elementow\n\n";
+    cout << "najdluzszy ciag zaczyna sie od elementu " << mostFirst << " i ma " << mostStringLength << " elementow\n\n";
 
     return 0;
 }
